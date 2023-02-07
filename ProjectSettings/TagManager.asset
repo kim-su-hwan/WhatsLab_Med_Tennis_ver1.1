@@ -9,6 +9,9 @@ TagManager:
   - court
   - Net
   - Racket
+  - Ball
+  - Bomb
+  - Watermelon
   layers:
   - Default
   - TransparentFX
