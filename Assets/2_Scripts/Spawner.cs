@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
-using UnityEditor.SearchService;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject ball;
+    public GameObject[] ball;
+    public GameObject spawnObject;
     public Transform[] points;
 
     public Transform target;
@@ -32,15 +33,25 @@ public class Spawner : MonoBehaviour
 
     private GameObject InitBall()
     {
-        GameObject cube = Instantiate(ball, points[Random.Range(0, points.Length)]);
-        cube.GetComponent<BallMove>().SetDir(target);
+        int points_num = 0;
+        Destroy(Instantiate(spawnObject, points[points_num]), 1.0f);
+        //GameObject cube = Instantiate(ball[RandomBall(Random.Range(0,101))], points[points_num]);
+        GameObject cube = Instantiate(ball[0], points[points_num]);
+        SetDir(cube);
+        
+//        cube.GetComponent<BallMove>().SetDir(target);
         return cube;
+    }
+    private void SetDir(GameObject initball)
+    {
+        Vector3 dir = target.position - initball.transform.position;
+        dir = dir.normalized;  
+        initball.GetComponent<Rigidbody>().velocity = new Vector3(dir.x*35,dir.y*9,dir.z*35); 
     }
 
 
     private void BallCount(GameObject cube)
     {
-        Debug.Log("check ball count");
         if(balls== null)
         {
             balls.Enqueue(cube);
@@ -52,5 +63,21 @@ public class Spawner : MonoBehaviour
         }
         balls.Enqueue(cube);
     }
-
+    
+    private int RandomBall(int num)
+    {
+        //probability 60 20 20
+        if(num < 60)
+        {
+            return 0;
+        }
+        else if(num >=60 && num < 80)
+        {
+            return 1;
+        }
+        else
+        {
+            return 2;
+        }
+    }
 }

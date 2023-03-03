@@ -12,6 +12,7 @@ TagManager:
   - Ball
   - Bomb
   - Watermelon
+  - Target
   layers:
   - Default
   - TransparentFX
