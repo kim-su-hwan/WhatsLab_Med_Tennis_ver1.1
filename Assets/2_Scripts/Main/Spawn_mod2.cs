@@ -9,6 +9,7 @@ using UnityEngine;
 public class Spawn_mod2 : MonoBehaviour
 {
     public GameObject[] spawns;
+    public GameObject[] player_spawns;
     [SerializeField] private GameObject target;
     [SerializeField] private GameObject[] ball;
     [SerializeField] private GameObject enemy;
@@ -37,7 +38,7 @@ public class Spawn_mod2 : MonoBehaviour
     IEnumerator InitEnemy()
     {
         int num = Random.Range(0, spawns.Length);
-        GameObject en = Instantiate(enemy, spawns[num].transform);
+        GameObject en = Instantiate(enemy, player_spawns[num].transform);
         yield return new WaitForSecondsRealtime(2.0f);
         Destroy(en);
         InitBall(num);
