@@ -33,7 +33,10 @@ public class BallMove : MonoBehaviour
     }
     public void GetTarget()
     {
-        GameObject tar = GameObject.Find("Target");
+        //GameObject tar = GameObject.Find("Target");
+        //
+        int num = Random.Range(0, 5);
+        GameObject tar = GameObject.Find("Target" + num.ToString());
         dir = tar.transform.position - gameObject.transform.position;
         dir = dir.normalized;
         rb.velocity = dir * speed; 
