@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class BallMove : MonoBehaviour
 {
@@ -16,14 +18,14 @@ public class BallMove : MonoBehaviour
     [SerializeField]
     private float bounce = 10.0f;
 
+    private ActionBasedController abc;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         GetTarget();
-        //rb.velocity = new Vector3(dir.x * speed, dir.y*speed/3, dir.z * speed);
-        //Debug.Log("Velocity : " + rb.velocity);
-        
+        abc = GameObject.Find("LeftHand Controller").GetComponent<ActionBasedController>();
     }
 
     // Update is called once per frame
@@ -56,18 +58,27 @@ public class BallMove : MonoBehaviour
             if (this.gameObject.tag == "Ball")
             {
                 score += 10;
+                Debug.Log("ball");
+                SoundController.instance.SoundPlay("Ball");
+                abc.SendHapticImpulse(0.3f, 0.3f);                
             }
             if (this.gameObject.tag == "Bomb")
             {
                 score -= 10;
                 if (score < 0) score = 0;
+                Debug.Log("bomb");
+                SoundController.instance.SoundPlay("Bomb");
+                abc.SendHapticImpulse(0.7f, 0.5f);
             }
             if (this.gameObject.tag == "Watermelon")
             {
                 score += 20;
+                Debug.Log("watermelon");
+                SoundController.instance.SoundPlay("Watermelon");
+                abc.SendHapticImpulse(0.5f, 0.3f);
             }
             ScoreController.instance.ShowScore(score);
-            Debug.Log(score);
+            Debug.Log("Score : " + score);
         }
         if (other.gameObject.tag == "court")
         {
