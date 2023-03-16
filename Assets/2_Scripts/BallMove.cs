@@ -25,13 +25,17 @@ public class BallMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         GetTarget();
-        abc = GameObject.Find("LeftHand Controller").GetComponent<ActionBasedController>();
+
+        if (GameManager.instance.HandVersion)
+            abc = GameObject.Find("RightHand Controller").GetComponent<ActionBasedController>();
+        else
+            abc = GameObject.Find("LeftHand Controller").GetComponent<ActionBasedController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
     }
     public void GetTarget()
     {
@@ -41,7 +45,7 @@ public class BallMove : MonoBehaviour
         GameObject tar = GameObject.Find("Target" + num.ToString());
         dir = tar.transform.position - gameObject.transform.position;
         dir = dir.normalized;
-        rb.velocity = dir * speed; 
+        rb.velocity = dir * speed;
     }
     //public void SetDir(Transform target)
     //{
@@ -50,7 +54,7 @@ public class BallMove : MonoBehaviour
     //    Debug.Log("Direction : " + gameObject.transform.position.x + " ,"+ gameObject.transform.position.y + " ,"+ gameObject.transform.position.z);
     //}
 
-    
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Racket")
@@ -60,7 +64,7 @@ public class BallMove : MonoBehaviour
                 score += 10;
                 Debug.Log("ball");
                 SoundController.instance.SoundPlay("Ball");
-                abc.SendHapticImpulse(0.3f, 0.3f);                
+                abc.SendHapticImpulse(0.3f, 0.3f);
             }
             if (this.gameObject.tag == "Bomb")
             {
@@ -85,5 +89,5 @@ public class BallMove : MonoBehaviour
             rb.AddForce(Vector3.up * bounce);
         }
     }
-    
+
 }
