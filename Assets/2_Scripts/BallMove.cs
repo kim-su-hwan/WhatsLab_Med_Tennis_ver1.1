@@ -52,7 +52,7 @@ public class BallMove : MonoBehaviour
     //    dir = target.transform.position - gameObject.transform.position;
     //    dir = dir.normalized;
     //    Debug.Log("Direction : " + gameObject.transform.position.x + " ,"+ gameObject.transform.position.y + " ,"+ gameObject.transform.position.z);
-    //}
+    //} 
 
 
     private void OnCollisionEnter(Collision other)

@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//이 스크립트는 개같네
-//아니 시부레 enemy만 만들면 중간중간에 왜 방향 계산이 틀리게 나오는건
-//시부레거 말 드럽게 안드네 원인도 모르겟고 왜 방향 계산 못하느디
-//이진수 따위만 계산하는 미개한 컴퓨터 시킴얼;ㅣㅏㅓ리;어리;
+
 public class Spawn_mod2 : MonoBehaviour
 {
     public GameObject[] spawns;
@@ -17,30 +14,41 @@ public class Spawn_mod2 : MonoBehaviour
     public float beat = (60 / 105) * 2;
     private float timer;
 
+    GameObject en = null;
+    private int num;
+
+    private void Awake()
+    {
+        num = 2;
+        en = Instantiate(enemy, player_spawns[num].transform);
+        StartCoroutine(InitEnemy());
+    }
+
     private void Update()
     {
+        en.transform.position = Vector3.Lerp(en.transform.position, player_spawns[num].transform.position, 0.1f);
         if (timer > beat)
         {
+            num = Random.Range(0, spawns.Length);
             timer -= beat;
-            StartCoroutine(InitEnemy());
+            StartCoroutine(InitEnemy());            
         }
-        timer += Time.deltaTime;
+        timer += Time.deltaTime;        
     }
 
     private void InitBall(int num)
     {
-        Destroy(Instantiate(ball[BallType()], spawns[num].transform), 10.0f);
-
+        Destroy(Instantiate(ball[BallType()], spawns[num].transform), 8.0f);
     }
 
 
 
     IEnumerator InitEnemy()
-    {
-        int num = Random.Range(0, spawns.Length);
-        GameObject en = Instantiate(enemy, player_spawns[num].transform);
-        yield return new WaitForSecondsRealtime(2.0f);
-        Destroy(en);
+    {    
+        yield return new WaitForSecondsRealtime(3.0f);
+        //GameObject en = Instantiate(enemy, player_spawns[num].transform);
+        //yield return new WaitForSecondsRealtime(2.0f);
+        //Destroy(en);
         InitBall(num);
     }
     private int BallType()

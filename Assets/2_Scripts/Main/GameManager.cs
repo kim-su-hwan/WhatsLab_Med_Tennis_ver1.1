@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    private GameObject lefthand;
+    private GameObject righthand;
+
     //false = leftHand , true = RightHand
     public bool HandVersion = false;
 
@@ -27,19 +30,28 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        if(HandVersion) { RightHandeVersion(); }
+        HandSetting();
+    }
+
+    public void HandSetting()
+    {
+        lefthand = GameObject.Find("LeftHand Controller");
+        righthand = GameObject.Find("RightHand Controller");
+        if (HandVersion) { RightHandeVersion(); }
         else { LeftHandeVersion(); }
     }
 
     public void LeftHandeVersion()
     {
         HandVersion = false;
-        GameObject.Find("RightHand Controller").SetActive(false);
+        lefthand.SetActive(true);
+        righthand.SetActive(false);
     }
     public void RightHandeVersion()
     {
         HandVersion = true;
-        GameObject.Find("LeftHand Controller").SetActive(false);
+        lefthand.SetActive(false);
+        righthand.SetActive(true);
     }
 
 
