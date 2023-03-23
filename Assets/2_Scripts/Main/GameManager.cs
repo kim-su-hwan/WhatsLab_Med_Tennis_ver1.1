@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        HandSetting();
     }
 
     public void HandSetting()
@@ -44,14 +43,14 @@ public class GameManager : MonoBehaviour
     public void LeftHandeVersion()
     {
         HandVersion = false;
-        lefthand.SetActive(true);
-        righthand.SetActive(false);
+        //lefthand.SetActive(true);
+        //righthand.SetActive(false);
     }
     public void RightHandeVersion()
     {
         HandVersion = true;
-        lefthand.SetActive(false);
-        righthand.SetActive(true);
+        //lefthand.SetActive(false);
+        //righthand.SetActive(true);
     }
 
 

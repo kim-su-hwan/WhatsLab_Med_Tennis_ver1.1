@@ -9,11 +9,10 @@ public class SceneControll : MonoBehaviour
     public void MoveTennisScene()
     {
         SceneManager.LoadScene("Tennis_modify2");
-        GameManager.instance.HandSetting();
     }
     public void FixedTennisScene()
     {
         SceneManager.LoadScene("Tennis_modify2_fixed");
-        GameManager.instance.HandSetting();
+
     }
 }

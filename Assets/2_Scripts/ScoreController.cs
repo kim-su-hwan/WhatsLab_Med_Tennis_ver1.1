@@ -20,7 +20,6 @@ public class ScoreController : MonoBehaviour
                 Destroy(this.gameObject);   
             }
         }
-        GameManager.instance.HandSetting();
     }
 
     [SerializeField] private TextMeshProUGUI score_text;

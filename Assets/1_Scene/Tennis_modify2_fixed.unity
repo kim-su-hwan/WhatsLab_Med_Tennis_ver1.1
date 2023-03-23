@@ -1475,6 +1475,52 @@ Transform:
   m_Father: {fileID: 1410180212}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &805787881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 805787882}
+  - component: {fileID: 805787883}
+  m_Layer: 0
+  m_Name: HandControll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &805787882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805787881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943588088}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &805787883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805787881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e4218cb61c3534d9b22dca504e5bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 1983825937}
+  rightHand: {fileID: 1983825936}
 --- !u!64 &830214586
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2753,6 +2799,7 @@ Transform:
   - {fileID: 1604437676}
   - {fileID: 1840760390}
   - {fileID: 1733969894}
+  - {fileID: 805787882}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2854,6 +2901,16 @@ Transform:
 --- !u!4 &1983825935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6969472681721457279, guid: a8a8371ce532663469e82f193c802d54, type: 3}
+  m_PrefabInstance: {fileID: 1983825933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1983825936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1857359496938243308, guid: a8a8371ce532663469e82f193c802d54, type: 3}
+  m_PrefabInstance: {fileID: 1983825933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1983825937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 770209718017585987, guid: a8a8371ce532663469e82f193c802d54, type: 3}
   m_PrefabInstance: {fileID: 1983825933}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2006417531 stripped

@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 130233727}
   - component: {fileID: 130233726}
   - component: {fileID: 130233725}
+  - component: {fileID: 130233728}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -319,6 +320,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &130233728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130233724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e4218cb61c3534d9b22dca504e5bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 581444804}
+  rightHand: {fileID: 581444803}
 --- !u!1 &169713310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,6 +1060,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34db9e69fbec314a83e04b7a950de4b, type: 3}
+--- !u!1 &581444803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1857359496938243308, guid: c34db9e69fbec314a83e04b7a950de4b, type: 3}
+  m_PrefabInstance: {fileID: 581444802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &581444804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 770209718017585987, guid: c34db9e69fbec314a83e04b7a950de4b, type: 3}
+  m_PrefabInstance: {fileID: 581444802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &716317887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,6 +1760,18 @@ MonoBehaviour:
       - m_Target: {fileID: 776938559}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: LeftHandeVersion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 130233728}
+        m_TargetAssemblyTypeName: HandOnOff, Assembly-CSharp
+        m_MethodName: OnLeftHand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3064,6 +3101,18 @@ MonoBehaviour:
       - m_Target: {fileID: 776938559}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RightHandeVersion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 130233728}
+        m_TargetAssemblyTypeName: HandOnOff, Assembly-CSharp
+        m_MethodName: OnRightHand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
