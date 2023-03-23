@@ -31,29 +31,14 @@ public class BallMove : MonoBehaviour
         else
             abc = GameObject.Find("LeftHand Controller").GetComponent<ActionBasedController>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void GetTarget()
     {
-        //GameObject tar = GameObject.Find("Target");
-        //
         int num = Random.Range(0, 5);
         GameObject tar = GameObject.Find("Target" + num.ToString());
         dir = tar.transform.position - gameObject.transform.position;
         dir = dir.normalized;
         rb.velocity = dir * speed;
     }
-    //public void SetDir(Transform target)
-    //{
-    //    dir = target.transform.position - gameObject.transform.position;
-    //    dir = dir.normalized;
-    //    Debug.Log("Direction : " + gameObject.transform.position.x + " ,"+ gameObject.transform.position.y + " ,"+ gameObject.transform.position.z);
-    //} 
-
 
     private void OnCollisionEnter(Collision other)
     {

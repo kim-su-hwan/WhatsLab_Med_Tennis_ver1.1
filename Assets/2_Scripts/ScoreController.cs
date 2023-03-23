@@ -25,16 +25,4 @@ public class ScoreController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI score_text;
     //static private int Score = 0;
     public void ShowScore(int score) { score_text.text = $"Score : {score}"; }
-    //public void AddScore(int score) 
-    //{ 
-    //    Score += score;   
-    //}
-    //public void RemoveScore(int score) 
-    //{ 
-    //    Score -= score;
-    //    if(Score < 0)
-    //        Score = 0;
-    //}
-
-
 }

@@ -54,4 +54,9 @@ public class ButtonController : MonoBehaviour
         canvas.SetActive(true);
     }
 
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
+
 }

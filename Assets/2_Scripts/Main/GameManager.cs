@@ -32,19 +32,12 @@ public class GameManager : MonoBehaviour
     {
     }
 
-    public void HandSetting()
-    {
-        lefthand = GameObject.Find("LeftHand Controller");
-        righthand = GameObject.Find("RightHand Controller");
-        if (HandVersion) { RightHandeVersion(); }
-        else { LeftHandeVersion(); }
-    }
-
     public void LeftHandeVersion()
     {
         HandVersion = false;
         //lefthand.SetActive(true);
         //righthand.SetActive(false);
+        
     }
     public void RightHandeVersion()
     {
@@ -53,5 +46,9 @@ public class GameManager : MonoBehaviour
         //righthand.SetActive(true);
     }
 
+    public void ChangeHand()
+    {
+        HandVersion = !HandVersion;
+    }
 
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3507070588935428387}
   - component: {fileID: -8597544215314290029}
   - component: {fileID: -1087794795499906318}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WaterMelonSphere
   m_TagString: Watermelon
   m_Icon: {fileID: 0}
