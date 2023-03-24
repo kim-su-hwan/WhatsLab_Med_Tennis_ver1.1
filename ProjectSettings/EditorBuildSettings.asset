@@ -16,7 +16,10 @@ EditorBuildSettings:
     guid: 57aa0da0e9150f740947bd38b245bd13
   - enabled: 1
     path: Assets/1_Scene/Tennis_modify2_fixed.unity
-    guid: ce9a62265cd265d4784f786265ad7eed
+    guid: 5debed871edbe01479023ad29336fe70
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0a8edf602df078345a477e5d49e32d7a, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fbfbcca7de1c4ae48bbbfc6d98a94acc, type: 2}
