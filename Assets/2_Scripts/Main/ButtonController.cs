@@ -59,4 +59,15 @@ public class ButtonController : MonoBehaviour
         Application.Quit();
     }
 
+    public void LeftHand()
+    {
+        GameManager.instance.HandVersion = false;
+    }
+
+    public void RightHand()
+    {
+        GameManager.instance.HandVersion = true;    
+    }
+
+
 }

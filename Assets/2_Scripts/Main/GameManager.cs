@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     private GameObject lefthand;
     private GameObject righthand;
 
+    public int gameScore = 0;
+
     //false = leftHand , true = RightHand
     public bool HandVersion = false;
 
@@ -30,20 +32,6 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-    }
-
-    public void LeftHandeVersion()
-    {
-        HandVersion = false;
-        //lefthand.SetActive(true);
-        //righthand.SetActive(false);
-        
-    }
-    public void RightHandeVersion()
-    {
-        HandVersion = true;
-        //lefthand.SetActive(false);
-        //righthand.SetActive(true);
     }
 
     public void ChangeHand()

@@ -73,6 +73,7 @@ public class BallMove : MonoBehaviour
         {
             rb.AddForce(Vector3.up * bounce);
         }
+        GameManager.instance.gameScore = score;
     }
 
 }

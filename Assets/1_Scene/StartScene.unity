@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 776938560}
   - component: {fileID: 776938559}
   m_Layer: 0
-  m_Name: GM
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1175,6 +1175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c0f2bab4f490d4b9b24e1130d2c8d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameScore: 0
   HandVersion: 0
 --- !u!4 &776938560
 Transform:
@@ -1757,9 +1758,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 776938559}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LeftHandeVersion
+      - m_Target: {fileID: 130233726}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: LeftHand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3234,9 +3235,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 776938559}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RightHandeVersion
+      - m_Target: {fileID: 130233726}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: RightHand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
