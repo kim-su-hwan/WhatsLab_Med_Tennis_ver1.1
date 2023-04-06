@@ -1443,6 +1443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9149294233504e64d90703736e9ae5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_Score: 0
   score_text: {fileID: 983169468}
 --- !u!1 &771264419
 GameObject:
@@ -2401,11 +2402,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604437675}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0268a354f0e4e5b4588ca6544b941e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1808502508}
   sdList: []
 --- !u!64 &1611590883
 MeshCollider:
@@ -2527,6 +2529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c0f2bab4f490d4b9b24e1130d2c8d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameScore: 0
   HandVersion: 0
 --- !u!64 &1798975329
 MeshCollider:

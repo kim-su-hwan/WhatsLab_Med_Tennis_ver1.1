@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScoreController : MonoBehaviour
 {
     public static ScoreController instance;
+    public int game_Score = 0;
 
     private void Awake()
     {
@@ -24,5 +25,9 @@ public class ScoreController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI score_text;
     //static private int Score = 0;
-    public void ShowScore(int score) { score_text.text = $"Score : {score}"; }
+    public void ShowScore(int score) 
+    { 
+        score_text.text = $"Score : {score}";
+        game_Score = score;
+    }
 }

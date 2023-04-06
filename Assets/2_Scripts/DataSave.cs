@@ -17,10 +17,11 @@ public class SaveData
     public float rot_y;
     public float rot_z;
     public string time;
+    public int score;
 }
 public class DataSave : MonoBehaviour
 {
-    //[SerializeField]
+    [SerializeField]
     private Camera cam;
 
     string path;
@@ -38,6 +39,7 @@ public class DataSave : MonoBehaviour
         sd.rot_y = rot.y;
         sd.rot_z = rot.z;
         sd.time = DateTime.Now.ToString();
+        sd.score = ScoreController.instance.game_Score;
         string jsonData = JsonUtility.ToJson(sd);
 
         Debug.Log(DateTime.Now.ToString() + jsonData);
