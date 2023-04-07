@@ -7,6 +7,7 @@ using System.IO;
 using UnityEngine.Rendering;
 using System.Data;
 using System;
+using Newtonsoft.Json.Linq;
 
 //SaveData type
 
@@ -30,26 +31,28 @@ public class DataSave : MonoBehaviour
     [SerializeField]
     private Camera cam;
 
+    private JArray jsonSet;
+
     string path;
     public List<SaveData> sdList = new List<SaveData>();
 
     private void Start()
     {
         path = Application.dataPath + "/data.json";
+        jsonSet = new JArray();
         StartCoroutine(JsonSaveCoroutine());
     }
     void SaveDataJson(Quaternion rot)
     {
-        SaveData sd = new SaveData();
-        sd.rot_x = rot.x;
-        sd.rot_y = rot.y;
-        sd.rot_z = rot.z;
-        sd.time = DateTime.Now.ToString();
-        string jsonData = JsonUtility.ToJson(sd);
-        
-        Debug.Log(DateTime.Now.ToString() + jsonData);
+        JObject data = new JObject();;
 
-        File.AppendAllText(path, jsonData);
+        data.Add("Rotation_X",rot.x.ToString());
+        data.Add("Rotation_Y", rot.y.ToString());
+        data.Add("Rotation_Z", rot.z.ToString());
+        data.Add("Now_time", DateTime.Now.ToString());
+
+        Debug.Log(data);
+        jsonSet.Add(data);
     }
     IEnumerator JsonSaveCoroutine()
     {
@@ -58,19 +61,21 @@ public class DataSave : MonoBehaviour
         {
             SaveDataJson(cam.transform.rotation);
             yield return new WaitForSeconds(1f);
-    }
         }
+    }
 
     public void SaveGameOverData()
     {
-        SaveDataScore sds = new SaveDataScore();
-        sds.score = GameManager.instance.gameScore;
-        sds.time = DateTime.Now.ToString();
-        string jsonData = JsonUtility.ToJson(sds);
+        JObject data = new JObject();
 
-        Debug.Log(jsonData);
 
-        File.AppendAllText(path, jsonData);
+        data.Add("Score",GameManager.instance.gameScore.ToString());
+        data.Add("Time", DateTime.Now.ToString());
+        jsonSet.Add(data);
+
+        Debug.Log(data);
+
+        File.AppendAllText(path, jsonSet.ToString());
     }
 
 }
