@@ -596,6 +596,21 @@ MonoBehaviour:
   canvas: {fileID: 220976345}
   gameovercanvas: {fileID: 814126997}
   score_text: {fileID: 1877037375}
+  SaveData:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1604437677}
+        m_TargetAssemblyTypeName: DataSave, Assembly-CSharp
+        m_MethodName: SaveGameOverData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &304719545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1639,6 +1654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9149294233504e64d90703736e9ae5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_Score: 0
   score_text: {fileID: 983169468}
 --- !u!1 &771264419
 GameObject:
@@ -2899,11 +2915,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604437675}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0268a354f0e4e5b4588ca6544b941e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1808502508}
   sdList: []
 --- !u!64 &1611590883
 MeshCollider:

@@ -17,8 +17,14 @@ public class SaveData
     public float rot_y;
     public float rot_z;
     public string time;
-    public int score;
 }
+
+public class SaveDataScore
+{
+    public int score;
+    public string time;
+}
+
 public class DataSave : MonoBehaviour
 {
     [SerializeField]
@@ -39,9 +45,8 @@ public class DataSave : MonoBehaviour
         sd.rot_y = rot.y;
         sd.rot_z = rot.z;
         sd.time = DateTime.Now.ToString();
-        sd.score = ScoreController.instance.game_Score;
         string jsonData = JsonUtility.ToJson(sd);
-
+        
         Debug.Log(DateTime.Now.ToString() + jsonData);
 
         File.AppendAllText(path, jsonData);
@@ -53,8 +58,19 @@ public class DataSave : MonoBehaviour
         {
             SaveDataJson(cam.transform.rotation);
             yield return new WaitForSeconds(1f);
-
+    }
         }
 
+    public void SaveGameOverData()
+    {
+        SaveDataScore sds = new SaveDataScore();
+        sds.score = GameManager.instance.gameScore;
+        sds.time = DateTime.Now.ToString();
+        string jsonData = JsonUtility.ToJson(sds);
+
+        Debug.Log(jsonData);
+
+        File.AppendAllText(path, jsonData);
     }
+
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameOverScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameOverScript : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI score_text;
 
+    public UnityEvent SaveData;
 
     public void InActiveCanvas()
     {
@@ -25,6 +27,7 @@ public class GameOverScript : MonoBehaviour
         score_text.text = $"Score  : {score}";
         Time.timeScale = 0;
         gameovercanvas.SetActive(true);
+        SaveData.Invoke();
     }
 
 }

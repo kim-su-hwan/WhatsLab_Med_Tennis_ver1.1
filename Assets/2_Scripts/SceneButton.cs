@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SceneButton : MonoBehaviour
 {
+
     public void OnApplicationQuit()
     {
         Application.Quit();
