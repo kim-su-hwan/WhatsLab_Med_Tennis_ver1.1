@@ -26,6 +26,7 @@ public class Spawn_mod2 : MonoBehaviour
 
     private void Update()
     {
+        //공의 움직임을 정의하는 함수
         en.transform.position = Vector3.Lerp(en.transform.position, player_spawns[num].transform.position, 0.1f);
         if (timer > beat)
         {
@@ -53,6 +54,7 @@ public class Spawn_mod2 : MonoBehaviour
     }
     private int BallType()
     {
+        //공의 종류가 나올 확률을 랜덤으로 수를 받아서 공의 타임을 정하는 함수
         int type = Random.Range(0, 100);
         if (type < 70)
         {

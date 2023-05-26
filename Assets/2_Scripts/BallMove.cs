@@ -44,6 +44,7 @@ public class BallMove : MonoBehaviour
     {
         if (other.gameObject.tag == "Racket")
         {
+            //라켓에 닿았을 때 공의 종류에 따라 손에 있는 진동값을 조절을 할 수 있다. 
             if (this.gameObject.tag == "Ball")
             {
                 score += 10;
